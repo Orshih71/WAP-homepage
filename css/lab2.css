@@ -1,0 +1,16 @@
+body{
+    background-color: slategray;
+    color: aliceblue;
+}
+h1, h2{
+    color: aquamarine;
+}
+.yellower {
+    color: gold;
+}
+.movies a {
+    color: red;
+}
+.moods {
+    display: inline-block;
+}
