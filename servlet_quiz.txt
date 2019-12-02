@@ -1,0 +1,17 @@
+1. What is the difference between a web server and a web container?
+
+2. What is a servlet?
+
+3. How do web servers and web containers interact with servlets?
+
+4. Who creates request objects?
+
+5. What are the states in the servlet lifecycle?
+
+6. Who calls init and when?
+
+7. Which of init, service, and doGet should you override?
+
+8. In what sense are servlets multi-threaded?
+
+9. What are the implications of this for servlet instance variables?

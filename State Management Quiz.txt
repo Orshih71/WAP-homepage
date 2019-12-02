@@ -1,0 +1,23 @@
+1. Can post requests be bookmarked? What are the problems?
+
+2. What is the purpose of request dispatching?
+
+3. What is the difference between redirect and request dispatch?
+
+4. What is an attribute ?
+
+5. What is the difference between attributes and parameters?
+
+6. What are dangers of using attributes?
+
+7. What does it mean to say that http is stateless? Give an example of a stateful protocol.
+
+8. Give 5 different methods for maintaining state information (count each attribute scope as one method).
+
+9. How long does a session last?
+
+10. What is a cookie, and how long does a cookie last?
+
+11. What is the purpose of URL rewriting?
+
+12. Why does the request attribute report ‘null’ for the maintaining state demo?
