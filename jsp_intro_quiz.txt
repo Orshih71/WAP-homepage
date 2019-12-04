@@ -1,0 +1,37 @@
+1. What is the main value of Java Server Pages?
+Eliminates the need to code complex output streams from the response object to produce a view.
+2. How are JSP pages related to servlets?
+When a browser asks for a JSP, the JSP engine first checks to see whether it needs to compile the page. If the page has never been compiled, or if the JSP has been modified since it was last compiled, the JSP engine compiles the page. The compilation process involves three steps: Parsing the JSP, Turning the JSP into a servlet, Compiling the servlet.
+3. How are JSP pages related to HTML?
+Jsp is html with a little java mixed in. There are two types of data in a JSP page: Template Data, JSP Elements.
+4. Give an example of a JSP scriptlet and show how it will look in the JSP servlet .
+<html>
+<body>
+<% out.print("Today is:"+java.util.Calendar.getInstance().getTime()); %>
+</body>
+</html>
+5. Give an example of a JSP declaration and show how it will look in the JSP servlet.
+<%@ page import = "java.io.*,java.util.*" %>
+<html lang="en">
+package org.apache.jsp;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+import java.io.*;
+import java.util.*;
+public final class number_002dquiz_002dresponse_jsp extends org.apache.jasper.runtime.HttpJspBase
+implements org.apache.jasper.runtime.JspSourceDependent,
+org.apache.jasper.runtime.JspSourceImports {
+}
+6. Give an example of a JSP comment and show how it will look in the JSP servlet.
+<%-- This is a JSP comment --%>
+7. Give an example of a JSP expression and show how it will look in the JSP servlet.
+<%= ((Person) request.getAttribute("person”)).getDog().getName() %>
+8. Give an example of a JSP directive and show how it will look in the JSP servlet.
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Iterator" %>
+9. Explain how an EL expression is evaluated.
+10. Explain how servlet attributes are involved in EL expressions.
+JSP Expression Language (EL) makes it possible to easily access application data stored in JavaBeans components. JSP EL allows you to create expressions both (a) arithmetic and (b) logical. Within a JSP EL expression, you can use integers, floating point numbers, strings, the built-in constants true and false for boolean values, and null.
+11. Explain how servlets and JSPs use request dispatch to interact.
+The exchange of information among servlets of a particular Java web application is known as Servlet Collaboration. This enables passing/sharing information from one servlet to the other through method invocations. The servlet api provides two interfaces namely: 1. javax.servlet.RequestDispatcher 2. javax.servlet.http.HttpServletResponse These two interfaces include the methods responsible for achieving the objective of sharing information between servlets. via either `forward` or `redirect`

@@ -1,0 +1,17 @@
+1. Rewrite the JSP page in the first demo (forEach) to use scripting instead of the JSTL forEach.
+<% List styles = (List)request.getAttribute(“styles”); Iterator it = styles.iterator(); while(it.hasNext()) { out.print(“
+try: “ + it.next()); } %>
+2. How do custom tags relate to JSTL?
+JSTL: tandard custom tags for JSPs, helps to reduce scripting. They are custom tag api, but have become a standard library, essentially a part of JSP language.
+3. What is the role of the URI in the TLD and the taglib directive?
+Link to TLD (descriptor) to validate JSP.
+4. What is a tag handler class?
+Extends the tag support framework class – `javax.servlet.jsp.tagext.TagSupport` which overrides method public void doTag() throws JspException, IOException
+5. What is the role of attribute setters in a tag handler class?
+Expose the attributes to be set to the custom tag.
+6. What is the role of the doTag() method in a tag handler class?
+To output the content of the custom tag.
+7. What does the operation getJspContext().getOut().write(“Hi Bob”) do when called in a doTag() method?
+Out the text "Hi Bob"
+8. What does the operation getJspBody().invoke(null) do when called in a doTag() method?
+Supporting tag bodies does not introduce any structural changes to the tag handler class. You still need to include setter methods for any attributes you are planning to declare and use. You still need to override the doTag method. To output the body content of the tag, inside the doTag method you need to acquire the JspFragment instance representing the body of the tag by calling the getJspBody method, then using its invoke method passing it null as its argument. Usually, this is done in a single step as follows: The container processes the JSP content found in the body of the tag just like any other JSP page content. If the invoke method is passed null as its argument, the resulting output of that JSP content is passed verbatim to the client. Therefore, the doTag method has no way of accessing the tag body output. All it can do is pass it along. We show how to access and modify the output of the tag body content before it's sent to the client in Section 8.1 (Manipulating Tag Body). It's important to stress, however, that it is the output resulting from the execution of the JSP code in the tag body, not the JSP code itself, that is passed to the client.
