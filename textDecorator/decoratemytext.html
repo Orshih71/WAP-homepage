@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://mumstudents.org/cs472/2019-10-BL/Labs/6/decoratemytext.html -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Text Decorator</title>
+    <link href="decoratemytext.css" type="text/css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="decoratemytext.js" type="application/javascript"></script>
+
+    <!-- link to your script file here -->
+
+</head>
+
+<body>
+<h1>Text Decorator</h1>
+
+<div>
+    <img src="decorated.gif" alt="very decorated!">
+</div>
+
+<div>
+    <fieldset>
+        <legend> Text </legend>
+        <label for="txtArea"></label><textarea id="txtArea" rows="4" cols="30"></textarea>
+    </fieldset>
+    <fieldset>
+        <legend> Decoration </legend>
+        <button onclick="startTimer();">Bigger Decorations!</button>
+        <br/>
+        <br/>
+        <button onclick="pigLatin();">Igpay Atinlay</button>
+        <br/>
+        <br/>
+        <button onclick="malkovitch();">Malkovitch</button>
+        <br/>
+        <br/>
+        <input id="bling" type="checkbox" onchange="onchangeBling();"/> <label for="bling">Bling</label>
+    </fieldset>
+</div>
+
+</body>
+</html>
