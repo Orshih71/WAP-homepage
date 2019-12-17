@@ -1,0 +1,92 @@
+Javascript Scope Exercises
+1. Determine what this Javascript code will print out (without running it):
+x = 1;
+    var a = 5;
+    var b = 10;
+    var c = function(a, b, c) {
+      var x = 10;
+      document.write(x);
+      document.write(a);
+      var f = function(a, b, c) {
+          b = a;
+          document.write(b);
+          b = c;
+          var x = 5;
+        }
+      f(a,b,c);
+      document.write(b);
+    }
+
+    c(8,9,10);
+    document.write(b);
+    document.write(x);
+    }
+
+Print -- x -- 10
+    Print -- a -- 8
+    Print -- b -- 8
+    Print -- b -- 10
+    Print -- b -- 10
+    Print -- x -- 1
+
+2.What is the difference between a method and function?
+A method is a function that belongs to a class. In JavaScript, however, a method is a function that belongs to an object.
+
+3.What does 'this' refer to when used in a Java method?
+Inside an object's method, the object refers to itself as this.
+
+4.What does 'this' refer to when used in a JavaScript method?
+In JavaScript this always refers to the "owner" of the function we're executing, or rather, to the object that a function is a method of. When we define our faithful function doSomething() in a page, its owner is the page, or rather, the window object (or global object) of JavaScript.
+
+5.What does 'this' refer to when used in a JavaScript constructor function?
+The value of this, when used in an object, is the object itself.
+
+    In a constructor function this does not have a value. It is a substitute for the new object. The value of this will become the new object when a new object is created.
+
+6.Assume object x is the prototype for object y in Javascript. Object x has a method f( ) containing keyword this. When f is called by x.f( ), what does this refer to?
+Refer to the prototype x
+
+7.What is a free variable in JavaScript?
+A variable referred to by a function that is not one of its parameters or local variables.
+
+8.Create an object that has properties with name = "fred" and major="music" and a property that is a function that takes 2 numbers and returns the smallest of the two, or the square of the two if they are equal.
+var Student = {
+      name: 'fred',
+      major: 'music',
+      foo: function(x, y) {
+        if (x === y) {
+          return 4 * x * x;
+        } else {
+          if (x < y>) {
+            return x;
+          } else {
+            return y;
+          }
+        }
+      }
+    }
+
+9.Write Javascript code for creating three Employee objects using the "new" keyword and a constructor function. Employee objects have the following fields: name, salary, position.
+function Employee(name, salary, position) {
+      this.name = name;
+      this.salary = salary;
+      this.position = position;
+    }
+
+    var emp1 = new Employee('A', 4000, 'Developer');
+    var emp2 = new Employee('B', 5000, 'DevOps');
+    var emp3 = new Employee('C', 10000, 'Technical Architect');
+
+10.Write a Javascript function that takes any number of input arguments and returns the product of the arguments.
+function foo(...args) {
+      if (args && args.length) {
+        return args.reduce( (accumulator, currentValue, currentIndex, array) =>
+          accumulator * currentValue );
+      }
+      return 0;
+    }
+
+11.Write an arrow function that returns the maximum of its three input arguments.
+var foo = (a, b, c) => {
+      return Math.max(a, b, c);
+    }
